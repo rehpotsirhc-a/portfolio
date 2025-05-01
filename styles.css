@@ -1,0 +1,32 @@
+body{
+    background-color:#000000;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid green;
+    height: 98vh;
+    width: 99vw;
+}
+*{
+    color:rgb(188, 255, 55);
+    font-family: 'Inter';font-size: 22px;
+}
+
+#everything{
+    border:1px solid rgb(188, 255, 55);
+    width: 95vw;
+    height: 90vh;
+    margin:10px
+}
+
+#text{
+    border:1px solid white;
+}
+
+#abtme{
+    border:1px solid white;
+}
+
+img{
+    max-height: 600px;
+}
