@@ -7,6 +7,22 @@ body {
     height: 98vh;
     width: 99vw;
     overflow: hidden;
+    will-change: opacity, transform;
+}
+
+body.fade-in {
+    animation: fadeInBody 0.5s ease forwards;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 * {
@@ -23,6 +39,8 @@ body {
     margin: 10px;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 .everythingcontent {
@@ -36,12 +54,12 @@ body {
 
 
 #footer {
-    border: 1px solid rgb(188, 255, 55);
+    border-top: 1px solid rgb(188, 255, 55);
     display: flex;
     position: absolute;
     width: 95vw;
     bottom: 0;
-    margin-bottom: 48px;
+    margin-bottom: 54px;
 
 
 }
@@ -205,7 +223,8 @@ ul li:hover ul a:nth-child(4) {
     align-self: flex-start;
     width: 45%;
     justify-self: center;
-    transform: translate(5%, 20%);
+    transform: translate(0%, 20%);
+    margin-left: 40px;
     height:71%;
     border: 1px solid rgb(188, 255, 55);
     padding: 10px;
@@ -233,15 +252,61 @@ ul li:hover ul a:nth-child(4) {
     }
 }
 
-.link{
-    transform: translate(0%, 0%);
+.imgcontainer  img {
+    width: auto;
+    height: 100%;
+    border: 1px solid rgb(188, 255, 55);
+    margin-bottom: 20px;
+}
+
+.imgcontainerprog  img {
+    width: auto;
+    height: 100%;
+    border-top: 1px solid rgb(188, 255, 55);
+    border-bottom: 1px solid rgb(188, 255, 55);
+    margin-bottom: 20px;
+}
+
+.imgcontainerprog > a{
+        width: auto;
+        height: 100%;
+        border: 0px solid rgb(188, 255, 55);
+        margin-bottom: 20px;
+}
+
+.imgcontainer{
+    display: flex;
+    flex-direction: column;
+    border: 0px solid rgb(188, 255, 55);
+    height: 700px;
+    margin-right: 190px;
+}
+
+.imgcontainerother{
+    display: flex;
+    flex-direction: column;
+    border: 0px solid rgb(188, 255, 55);
+    height: 700px;
+    margin-right: 190px;
+    overflow-y: auto;  /* allow vertical scroll */
+    overflow-x: hidden; /* prevent sideways scroll */
+}
+
+.imgcontainerprog{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(188, 255, 55);
+    width: 930px;
+    height: 470px;
+    margin-right: 40px;
+    overflow-y: auto;  /* allow vertical scroll */
+    overflow-x: hidden; /* prevent sideways scroll */
 
 }
 
-img {
-    max-height: 600px;
-    width: auto;
-    margin-right: 100px;
+hr{
+    color: rgb(188, 255, 55) !important;
+    border: 1px solid rgb(188, 255, 55) !important;
 }
 
 .fade-out {
@@ -256,13 +321,47 @@ img {
 }
 
 /* Optional: fade-in for page load */
-body {
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
+p, hr,  #text > a {
+    opacity: 1;
+    animation: fadeIn 1.5s ease forwards;
 }
 
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
+}
+
+
+
+.blue-theme, .blue-theme * {
+    color: rgb(0, 217, 255) !important;
+    border-color: rgb(0, 217, 255) !important;
+}
+
+
+.tog{
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(188, 255, 55);
+    rotate: -90deg;
+    position: absolute;
+    top: 98%;
+    left:-20%
+}
+
+.tog:hover{
+    color:rgb(0, 217, 255);
+    border: 1px solid rgb(0, 217, 255);
+
+}
+
+.blue-theme .mainbutton:hover,
+.blue-theme .tog:hover,
+.blue-theme ul li:hover ul a:hover {
+    color: rgb(188, 255, 55) !important;
+    border-color: rgb(188, 255, 55) !important;
+}
+
+.blue-theme .tog {
+    transform: translate(8px,-8px);
 }
