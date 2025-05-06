@@ -64,4 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     changeSlide();
 });
 
+window.addEventListener('resize', () => {
+    changeSlide(); // Update position on window resize
+});
 document.body.offsetHeight; // Trigger reflow

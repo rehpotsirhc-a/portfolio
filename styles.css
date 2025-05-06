@@ -74,7 +74,7 @@ body.fade-in {
     width: 95vw;
     bottom: 0;
     margin-bottom: 40px;
-    transform: translate(-99.2%, 0%);
+    transform: translate(-99.1%, 0%);
     z-index: 2;
 }
 
@@ -107,6 +107,7 @@ li a {
     border: 1px solid rgb(188, 255, 55);
     border-radius: 2.4px;
     width: 142px;
+    text-decoration: none;
 }
 
 li a:hover {
@@ -162,10 +163,6 @@ ul li ul li {
     height: 200px;
     text-align: center;
     z-index: 999;
-}
-
-* {
-    text-decoration: none;
 }
 
 a:hover {
@@ -351,6 +348,27 @@ a {
     z-index: 0;
 }
 
+.linkcontainer {
+    border: 0px solid rgb(188, 255, 55);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 75%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.linkcontainer a {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 50px;
+    border: 1px solid rgb(188, 255, 55);
+    width: 400px;
+}
+
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
@@ -450,9 +468,6 @@ hr,
     border: 1px solid rgb(188, 255, 55);
     rotate: -90deg;
     position: absolute;
-    top: 87.4%;
-    left: -2.7%;
-    width: 130px;
     /* <-- Add a fixed width */
     text-align: center;
     /* <-- Optional: center the text within */
@@ -461,6 +476,13 @@ hr,
     overflow: hidden;
     /* Optional: hide overflow */
     cursor: pointer;
+        bottom: 90px;
+        left: -50px; /* Adjust this to ensure visibility on all viewports */
+        width: 130px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
 }
 
 .tog:hover {
@@ -469,6 +491,12 @@ hr,
 
 }
 
+.linkcontainer a:hover {
+    color: rgb(0, 217, 255) !important;
+    border-color: rgb(0, 217, 255) !important;
+}
+
+.blue-theme a:hover,
 .blue-theme .carousel-button:hover,
 .blue-theme .mainbutton:hover,
 .blue-theme .tog:hover,
@@ -489,4 +517,59 @@ hr,
 
 #pbutt {
     pointer-events: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #1d2b0b, #0f0f0f 50%, #1d2b0b);
+}
+
+p {
+    line-height: 35px;
+}
+
+@media screen and (max-width: 768px) {
+    .everythingcontent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #textprog, .imgcontainerprog {
+        width: 90%;
+        height: auto;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    .carousel-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tog {
+        left: 10px;
+        top: auto;
+        bottom: 10px;
+        transform: rotate(-90deg);
+    }
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
