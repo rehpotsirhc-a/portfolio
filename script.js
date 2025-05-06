@@ -3,26 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('fade-in');
 
     // Smooth page transition
-const links = document.querySelectorAll('#footer a');
-links.forEach(link => {
-    if (!link.href || link.getAttribute("href").startsWith("#")) return;
+    const links = document.querySelectorAll('#footer a');
+    links.forEach(link => {
+        if (!link.href || link.getAttribute("href").startsWith("#")) return;
 
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.body.classList.remove('fade-in');
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.remove('fade-in');
+            document.body.classList.add('fade-out');
 
-        // Force reflow before fade-out
-        void document.body.offsetWidth;
-
-        document.body.classList.add('fade-out');
-
-        requestAnimationFrame(() => {
             setTimeout(() => {
                 window.location.href = this.href;
             }, 500);
         });
     });
-});
 
     // Apply theme
     const storedTheme = localStorage.getItem("theme");
@@ -31,22 +25,15 @@ links.forEach(link => {
 
     if (storedTheme === "blue") {
         container.classList.add("blue-theme");
-        button.innerText = "Set Everything to Green";
     } else {
         container.classList.remove("blue-theme");
-        button.innerText = "Set Everything to Blue";
     }
+    button.innerText = "Touch me!";
 
     button.addEventListener('click', () => {
-        if (container.classList.contains("blue-theme")) {
-            container.classList.remove("blue-theme");
-            button.innerText = "Set Everything to Blue";
-            localStorage.setItem("theme", "green");
-        } else {
-            container.classList.add("blue-theme");
-            button.innerText = "Set Everything to Green";
-            localStorage.setItem("theme", "blue");
-        }
+        container.classList.toggle("blue-theme");
+        localStorage.setItem("theme", container.classList.contains("blue-theme") ? "blue" : "green");
+        button.innerText = "Touch me!"; // Always keep the label
     });
 
 });
