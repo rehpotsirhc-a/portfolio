@@ -6,8 +6,8 @@ body {
     border: 0px solid green;
     height: 98vh;
     width: 99vw;
-    overflow: hidden;
     will-change: opacity, transform;
+    overflow: hidden;
 }
 
 body.fade-in {
@@ -44,12 +44,12 @@ body.fade-in {
 }
 
 .everythingcontent {
-    border: 0px solid rgb(255, 55, 55);
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95vw;
-    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 
@@ -59,9 +59,18 @@ body.fade-in {
     position: absolute;
     width: 95vw;
     bottom: 0;
-    margin-bottom: 54px;
+    margin-bottom: 40px;
+}
 
-
+#footerprog {
+    border-top: 1px solid rgb(188, 255, 55);
+    display: flex;
+    position: absolute;
+    width: 95vw;
+    bottom: 0;
+    margin-bottom: 40px;
+    transform: translate(-100%, 0%);
+    z-index: 2;
 }
 
 ul {
@@ -85,7 +94,6 @@ li {
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
-
 }
 
 li a {
@@ -141,7 +149,7 @@ ul li ul li {
     position: absolute;
     background: rgb(121, 121, 121, 0);
     display: none;
-    transform: translate(-21%, -115%);
+    transform: translate(-21%, -130%);
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -162,7 +170,7 @@ a:hover {
 
 ul li ul a {
     display: block;
-    width: 160px;
+    width: 180px;
     text-align: center;
     padding: 6px;
     border: 1px solid rgb(188, 255, 55);
@@ -223,14 +231,48 @@ ul li:hover ul a:nth-child(4) {
     align-self: flex-start;
     width: 45%;
     justify-self: center;
-    transform: translate(0%, 20%);
+    transform: translate(0%, 19%);
     margin-left: 40px;
     height:71%;
     border: 1px solid rgb(188, 255, 55);
     padding: 10px;
+}
+
+#textwrite {
+    align-self: flex-start;
+    width: 45%;
+    justify-self: center;
+    transform: translate(0%, 19%);
+    margin-left: 40px;
+    height:71%;
+    border: 1px solid rgb(188, 255, 55);
+    padding: 10px;
+}
+
+#text p {
+     font-size: 27.3px;
+     margin:0px;
+     padding:0px;
+}
+
+#textwrite p, a {
+     font-size: 27.3px;
+}
+
+#textprog {
+    align-self: flex-start;
+    width: 45%;
+    justify-self: center;
+    transform: translate(-3%, 20%);
+    margin-left: 40px;
+    height:71%;
+    border: 1px solid rgb(188, 255, 55);
+    padding: 10px;
+    overflow-y: auto;  /* allow vertical scroll */
+    overflow-x: hidden; /* prevent sideways scroll */
     *{
-        font-size: 20px;
-    }
+        font-size: 30px;
+    }    
 }
 
 #textres{
@@ -253,33 +295,21 @@ ul li:hover ul a:nth-child(4) {
 }
 
 .imgcontainer  img {
-    width: auto;
+    width: 100%;
     height: 100%;
     border: 1px solid rgb(188, 255, 55);
     margin-bottom: 20px;
 }
 
-.imgcontainerprog  img {
-    width: auto;
-    height: 100%;
-    border-top: 1px solid rgb(188, 255, 55);
-    border-bottom: 1px solid rgb(188, 255, 55);
-    margin-bottom: 20px;
-}
-
-.imgcontainerprog > a{
-        width: auto;
-        height: 100%;
-        border: 0px solid rgb(188, 255, 55);
-        margin-bottom: 20px;
-}
 
 .imgcontainer{
     display: flex;
     flex-direction: column;
-    border: 0px solid rgb(188, 255, 55);
+    border: 1px solid rgb(188, 255, 55);
     height: 700px;
-    margin-right: 190px;
+    margin-right: 165px;
+    align-self: center;
+    margin-bottom: 3.48%;
 }
 
 .imgcontainerother{
@@ -292,16 +322,65 @@ ul li:hover ul a:nth-child(4) {
     overflow-x: hidden; /* prevent sideways scroll */
 }
 
-.imgcontainerprog{
+.imgcontainerprog {
     display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(188, 255, 55);
+    justify-content: center;
+    align-items: center;
     width: 930px;
     height: 470px;
-    margin-right: 40px;
-    overflow-y: auto;  /* allow vertical scroll */
-    overflow-x: hidden; /* prevent sideways scroll */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(188, 255, 55);
+    transform: translate(-1.5%, -10%);
+    z-index: 0;
+}
 
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    display: none; /* Hide all slides by default */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel-slide.active {
+    display: block; /* Only show the active slide */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(188, 255, 55);
+    border: none;
+    padding: 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1; /* bring it above slides but below global nav */
+    pointer-events: auto;
+}
+
+.carousel-button.prev {
+    position: absolute;
+    border: 1px solid rgb(188, 255, 55);
+    transform: translate(750%, 300%);
+    width: 140px;
+}
+
+.carousel-button.next {
+    border: 1px solid rgb(188, 255, 55);
+    width: 140px;
+    transform: translate(1050%, 300%);
+}
+
+.carousel-button:hover {
+    border: 1px solid rgb(0, 217, 255);
+    color: rgb(0, 217, 255);;
 }
 
 hr{
@@ -345,8 +424,8 @@ p, hr,  #text > a {
     border: 1px solid rgb(188, 255, 55);
     rotate: -90deg;
     position: absolute;
-    top: 98%;
-    left:-20%
+    top: 81.2%;
+    left:-5.7%
 }
 
 .tog:hover{
