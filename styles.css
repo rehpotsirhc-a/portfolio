@@ -57,6 +57,16 @@ body.fade-in {
     ;
 }
 
+.everythingcontentprog {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+    ;
+}
 
 #footer {
     border-top: 1px solid rgb(188, 255, 55);
@@ -230,6 +240,30 @@ ul li:hover ul a:nth-child(4) {
 }
 
 #text {
+    align-self: center;
+    width: 50%;
+    justify-self: center;
+    margin-left: 40px;
+    height: auto;
+    border: 1px solid rgb(188, 255, 55);
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+#textcont {
+    align-self: center;
+    width: 50%;
+    justify-self: center;
+    margin-left: 40px;
+    height: auto;
+    border: 1px solid rgb(188, 255, 55);
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+}
+
+#textport {
     align-self: center;
     width: 50%;
     justify-self: center;
@@ -588,7 +622,207 @@ p {
     object-fit: contain;
 }
 
+@media screen and (max-width: 1024px) {
 
+
+    body {
+        overflow: hidden;
+    }
+
+    .everythingcontent {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .carousel-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #text {
+        width: auto;
+        height: auto;
+        margin: 10px
+    }
+
+    #textwrite {
+        height: 60%;
+        overflow-y: auto;
+        /* allow vertical scroll */
+        overflow-x: hidden;
+        transform: translate(0%, 28%);
+    }
+
+    #everythingcontent {
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 0px;
+    }
+
+    .imgcontainer {
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+
+    ul {
+        transform: translate(0%, 10%);
+        height: 100px;
+    }
+
+    #footer {
+        width: 94.99vw;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid rgb(188, 255, 55);
+        transform: translate(0%, 3%);
+    }
+
+    .tog {
+        rotate: 0deg;
+        bottom: -2px;
+        left: 45.4%;
+    }
+
+    .linkcontainer a {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        font-size: 50px;
+        border: 1px solid rgb(188, 255, 55);
+        width: 200px;
+        font-size: 20px;
+    }
+
+    .linkcontainer {
+        justify-content: space-evenly;
+        height: 30%;
+    }
+
+    #text {
+        display: flex;
+        flex-direction: column;
+        /* or row, depending on your layout */
+        height: 30%;
+        width: 100%;
+    }
+
+    #text p {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow-wrap: break-word;
+        height: auto;
+        width: 90%;
+        margin: 10px 0;
+        margin-left: 3%;
+    }
+
+    #textabt p {
+        display: flex;
+        border: 0px solid rgb(255, 55, 55);
+        height: 140%;
+        width: 95%;
+        transform: translate(2%, 6%);
+
+    }
+
+    #textabt {
+        display: flex;
+        flex-direction: column;
+        /* or row, depending on your layout */
+        height: 50%;
+        width: 50%;
+        border: 01px solid rgb(188, 255, 55);
+        overflow-y: auto;
+        /* allow vertical scroll */
+        overflow-x: hidden;
+        margin-bottom: 40px;
+        transform: translate(0%, 4%);
+    }
+
+    #textabt p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+
+    #textcont a {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .dropdown {
+        transform: translate(-23%, -130%);
+    }
+
+    .resframe {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .resume {
+        position: relative;
+        width: 100%;
+        height: 0px;
+        border: 1px solid rgb(0, 0, 0);
+        padding-top: 129.4118%;
+        padding-bottom: 0;
+        box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+        margin-top: 1.6em;
+        margin-bottom: 0.9em;
+        overflow: hidden;
+        border-radius: 8px;
+        will-change: transform;
+        transform: translate(-13%, 9%);
+    }
+
+    .imgcontainerprog {
+        width: 80%;
+        height: 40%;
+    }
+
+    .carousel {
+        width: 80%;
+    }
+
+    .everythingcontentprog {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .imgcontainerprog {
+        order: -1;
+    }
+
+    #textprog {
+        order: 1;
+        transform: translate(45%, -40%);
+        height: 50%;
+    }
+
+    .carousel-controls {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #footerprog {
+        transform: translate(-50%, 0%);
+    }
+}
 
 @media screen and (max-width: 480px) {
 
@@ -620,6 +854,40 @@ p {
         margin: 10px
     }
 
+    #textcont {
+        width: auto;
+        height: auto;
+        margin: 10px;
+        flex-direction: column;
+        height: 40%;
+        border: 01px solid rgb(188, 255, 55);
+        overflow-y: auto;
+        /* allow vertical scroll */
+        overflow-x: hidden;
+        margin-bottom: 7px;
+        transform: translate(0%, 0%);
+    }
+
+    #textwrite {
+        width: auto;
+        height: auto;
+        margin: 10px;
+        flex-direction: column;
+        height: 40%;
+        border: 01px solid rgb(188, 255, 55);
+        overflow-y: auto;
+        /* allow vertical scroll */
+        overflow-x: hidden;
+        margin-bottom: 7px;
+        transform: translate(0%, 0%);
+    }
+
+    #textport {
+        width: auto;
+        height: auto;
+        margin: 10px
+    }
+
     #everythingcontent {
         justify-content: space-around;
         align-items: center;
@@ -634,7 +902,7 @@ p {
 
     li {
         width: 200px;
-        height: 100px;
+        height: 10px;
 
     }
 
@@ -703,14 +971,6 @@ p {
 
     }
 
-    #textwrite {
-        display: flex;
-        flex-direction: column;
-        /* or row, depending on your layout */
-        height: 30%;
-        width: 100%;
-    }
-
     #textabt {
         display: flex;
         flex-direction: column;
@@ -726,7 +986,13 @@ p {
     }
 
     #textabt p {
-        font-size: 15px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+
+    #textcont a {
+        font-size: 20px;
         line-height: 20px;
     }
 
@@ -743,6 +1009,7 @@ p {
         padding: 0;
         margin: 0;
     }
+
     .resume {
         position: relative;
         width: 175%;
