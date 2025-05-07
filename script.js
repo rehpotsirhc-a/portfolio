@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth page transition
     document.body.classList.add('fade-in');
 
+    // Apply fade-in-up animation to all p and a elements
+    const elementsToAnimate = document.querySelectorAll('p, a');
+    elementsToAnimate.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add('fade-in-up');
+        }, index * 100); // Stagger the animations slightly
+    });
+
     const links = document.querySelectorAll('#footer a');
     links.forEach(link => {
         if (!link.href || link.getAttribute("href").startsWith("#")) return;
@@ -68,3 +76,5 @@ window.addEventListener('resize', () => {
     changeSlide(); // Update position on window resize
 });
 document.body.offsetHeight; // Trigger reflow
+
+
