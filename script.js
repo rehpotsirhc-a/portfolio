@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('fade-in');
 
     // Apply fade-in-up animation to all p and a elements
-    const elementsToAnimate = document.querySelectorAll('p, a');
+    const elementsToAnimate = Array.from(document.querySelectorAll('p, a')).filter(el => !el.closest('#footer'));
+
     elementsToAnimate.forEach((el, index) => {
         setTimeout(() => {
             el.classList.add('fade-in-up');
