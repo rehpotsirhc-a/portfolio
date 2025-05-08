@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToAnimate.forEach((el, index) => {
         setTimeout(() => {
             el.classList.add('fade-in-up');
-        }, index * 100); // Stagger the animations slightly
+        }, index * 80); // Stagger the animations slightly
     });
 
     const links = document.querySelectorAll('#footer a');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 window.location.href = this.href;
-            }, 500);
+            }, 480);
         });
     });
 
@@ -50,27 +50,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
     let currentSlide = 0;
+    changeSlide(); // Ensures the first slide is visible on load
+
 
     function changeSlide() {
         slides.forEach((slide, index) => {
-            slide.classList.remove('active');
+            slide.classList.remove('active', 'slide-in');
             if (index === currentSlide) {
                 slide.classList.add('active');
+                // Trigger slide-in animation
+                void slide.offsetWidth; // Force reflow to restart animation
+                slide.classList.add('slide-in');
             }
         });
     }
+    
 
     prevButton?.addEventListener('click', () => {
+        lastInteractionTime = Date.now();
         currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
         changeSlide();
     });
-
+    
     nextButton?.addEventListener('click', () => {
+        lastInteractionTime = Date.now();
         currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
         changeSlide();
     });
 
-    changeSlide();
+    // Auto scroll every 5 seconds
+    setInterval(() => {
+        const now = Date.now();
+        if (now - lastInteractionTime >= 10000) { // 10 seconds
+            currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+            changeSlide();
+        }
+    }, 5000); // still checks every 5 seconds
 });
 
 window.addEventListener('resize', () => {
@@ -78,4 +93,5 @@ window.addEventListener('resize', () => {
 });
 document.body.offsetHeight; // Trigger reflow
 
+let lastInteractionTime = Date.now();
 
