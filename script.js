@@ -94,4 +94,3 @@ window.addEventListener('resize', () => {
 document.body.offsetHeight; // Trigger reflow
 
 let lastInteractionTime = Date.now();
-
