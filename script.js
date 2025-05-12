@@ -94,3 +94,30 @@ window.addEventListener('resize', () => {
 document.body.offsetHeight; // Trigger reflow
 
 let lastInteractionTime = Date.now();
+
+
+const imageMap = {
+  quest: 'mog.png',
+  car: 'tri.png',
+  houde: 'home.png',
+  bcalc: 'budget.png',
+  cert: 'cert.png',
+  calc: 'calc.png',
+  garden: 'zen.png',
+};
+
+const carouselImage = document.getElementById('carouselImage');
+
+Object.entries(imageMap).forEach(([divId, imageSrc]) => {
+  const element = document.getElementById(divId);
+  if (element) {
+    element.addEventListener('mouseenter', () => {
+      carouselImage.src = imageSrc;
+    });
+
+    // Optionally revert to default on mouse leave
+    element.addEventListener('mouseleave', () => {
+      carouselImage.src = 'default.png'; // Change this to your default image
+    });
+  }
+});
