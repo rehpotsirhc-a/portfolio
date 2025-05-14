@@ -33,6 +33,18 @@ body.fade-in {
     transition: opacity 0.5s ease;
 }
 
+#everythingres {
+    border: solid rgb(188, 255, 55);
+    border-width: thin;
+    width: 95vw;
+    height: 90vh;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
 .everythingcontent {
     flex: 1;
     display: flex;
@@ -42,6 +54,33 @@ body.fade-in {
     align-content: center;
     justify-content: center;
 }
+
+.everythingcontentred {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: 70%;
+    transform: translate(0%, 20%);
+    flex-direction: column;
+    border: 1px solid rgb(188, 255, 55);
+    overflow-y: auto;
+    /* allow vertical scroll */
+    overflow-x: hidden;
+    /* prevent sideways scroll */
+
+    
+}
+
+.s{
+    border-bottom: 1px solid rgb(188, 255, 55);
+}
+.s ul{
+    color:rgb(188, 255, 55);
+    display: inline-block;
+    list-style-type: circle;
+;
+}
+
 
 .everythingcontentother {
     flex: 1;
@@ -72,6 +111,16 @@ body.fade-in {
     width: 95vw;
     bottom: 0;
     margin-bottom: 40px;
+}
+
+#footerres2 {
+    border-top: 1px solid rgb(188, 255, 55);
+    display: flex;
+    position: absolute;
+    width: 95vw;
+    bottom: 0;
+    margin-bottom: 40px;
+    transform: translate(-100%, 0%);
 }
 
 #footerprog {
@@ -252,6 +301,32 @@ ul li:hover ul a:nth-child(4) {
     justify-content: center;
 }
 
+#textres2 {
+    align-self: center;
+    width: 95%;
+    height: 100%;
+    justify-self: center;
+    border: 0px solid rgb(188, 255, 55);
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translate(0%,20%);
+}
+#textres2 p {
+    font-size: 15px;
+    line-height: 19px;
+}
+
+#textres2 ul {
+    color: rgb(188, 255, 55);
+    list-style-type: circle;
+    margin: 0;
+    padding: 0;
+}
+
 #textcont {
     align-self: center;
     width: 50%;
@@ -344,8 +419,12 @@ a {
     width: 50%;
     justify-self: center;
     transform: translate(16%, 0%);
-
 }
+
+#textres2 {
+    border: 1px solid rgb(188, 255, 55);
+}
+
 
 #textintro {
     align-self: flex-start;
