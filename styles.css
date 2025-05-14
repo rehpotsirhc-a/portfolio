@@ -369,7 +369,7 @@ p {
     overflow-y: auto;
     /* allow vertical scroll */
     overflow-x: hidden;
-
+transform: translate(0%, 0%);
     /* prevent sideways scroll */
 }
 
@@ -465,13 +465,23 @@ a {
 }
 
 .imgcontainerabt img {
-    width: 80%;
+    width: 70%;
     height: auto;
     /* Maintain aspect ratio */
     border: 0px solid rgb(188, 255, 55);
     object-fit: contain;
     /* Optional: prevents distortion */
-    transform: translate(10%,2.5%);
+    transform: translate(30%, 2.5%);
+}
+
+.imgcontainercont img {
+    width: 70%;
+    height: auto;
+    /* Maintain aspect ratio */
+    border: 0px solid rgb(188, 255, 55);
+    object-fit: contain;
+    /* Optional: prevents distortion */
+    transform: translate(30%, 11.7%);
 }
 
 .imgcontainerother {
