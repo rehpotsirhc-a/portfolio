@@ -400,7 +400,7 @@ a {
     flex-direction: column;
     border: 0px solid rgb(188, 255, 55);
     width: auto;
-    height: 70%;
+    height: 60%;
     margin-right: auto;
     margin-left: auto;
     overflow-y: auto;
@@ -408,6 +408,18 @@ a {
     overflow-x: hidden;
     /* prevent sideways scroll */
     transform: translate(0%,-5%);
+}
+
+.imgcontainerother img{
+    width: 80%;
+    height: auto;
+    /* Maintain aspect ratio */
+    border: 0px solid rgb(188, 255, 55);
+    object-fit: contain;
+    /* Optional: prevents distortion */
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(20%, 0%);
 }
 
 .imgcontainercont {
