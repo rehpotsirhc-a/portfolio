@@ -386,12 +386,13 @@ a {
 }
 
 .imgcontainerabt img {
-    width: 150%;
+    width: 80%;
     height: auto;
     /* Maintain aspect ratio */
     border: 0px solid rgb(188, 255, 55);
     object-fit: contain;
     /* Optional: prevents distortion */
+    transform: translate(10%,2.5%);
 }
 
 .imgcontainerother {
@@ -407,6 +408,31 @@ a {
     overflow-x: hidden;
     /* prevent sideways scroll */
     transform: translate(0%,-5%);
+}
+
+.imgcontainercont {
+    display: flex;
+    flex-direction: column;
+    border: 0px solid rgb(188, 255, 55);
+    width: auto;
+    height: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-y: auto;
+    /* allow vertical scroll */
+    overflow-x: hidden;
+    /* prevent sideways scroll */
+    transform: translate(20%,13.6%);
+}
+
+.imgcontainercont img {
+    width: 70%;
+    height: auto;
+    /* Maintain aspect ratio */
+    border: 0px solid rgb(188, 255, 55);
+    object-fit: contain;
+    /* Optional: prevents distortion */
+
 }
 
 .imgcontainerprog {
