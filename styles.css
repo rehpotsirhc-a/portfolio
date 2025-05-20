@@ -280,10 +280,6 @@ ul li:hover ul a:nth-child(4) {
     position: absolute;
 }
 
-.zen {
-    border: 1px solid rgb(188, 255, 55);
-}
-
 .heading {
     font-size: 40px;
     color: rgb(188, 255, 55);
@@ -343,13 +339,13 @@ ul li:hover ul a:nth-child(4) {
 }
 
 .s p {
-    font-size: auto;
     margin: 0px;
     padding: 0px;
     color: rgb(188, 255, 55);
-    font-size: 20px;
-    line-height: 22px; 
+    font-size: 22px;
+    line-height: 25px; 
     margin: 20px;
+    transform: translate(0%,0%);
 }
 
 .s h2 {
